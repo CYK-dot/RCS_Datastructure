@@ -128,7 +128,6 @@ int RcsFifoSendAcquire(RcsFifo_t fifo, size_t size, void *memAcquired[2])
     }   
     // 空间不足
     if (size > RCS_FIFO_FREE_SPACE(handle)) {
-        printf("wh=%d,wt=%d,rh=%d,rt=%d,size=%d,space=%d\n",handle->indexWriteHead,handle->indexWriteTail,handle->indexReadHead,handle->indexReadTail,size,RCS_FIFO_FREE_SPACE(handle));
         FifoPortExitCriticalFromAll();
         return RCS_FIFO_NO_SPACE;
     }
